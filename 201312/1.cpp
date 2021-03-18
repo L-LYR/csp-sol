@@ -27,3 +27,7 @@ auto main() -> int {
   cout << maxVal << endl;
   return 0;
 }
+
+/*
+  解法比较简单，输入时统计，再进行比较选择即可。
+*/
