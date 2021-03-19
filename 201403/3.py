@@ -51,3 +51,6 @@ for i in range(1, n + 1):
         if p:
             res.append(p)
     print(' '.join(res))
+
+
+# 模拟即可，记得排序

@@ -47,3 +47,7 @@ auto main() -> int {
   }
   return 0;
 }
+
+/*
+  类似LRU算法，模拟即可
+*/
