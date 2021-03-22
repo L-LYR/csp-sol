@@ -20,3 +20,8 @@ auto main() -> int {
 
   return 0;
 }
+
+/*
+  输入，排序，统计。
+  或者用hash也可。
+*/

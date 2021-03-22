@@ -19,3 +19,5 @@ for i in range(0, n):
     else:
         if src.lower().find(tar.lower()) != -1:
             print(src)
+
+# Python3巨简单，模拟就行了
