@@ -31,7 +31,7 @@ task ts[maxn];
 int dp[maxVal][maxVal][maxVal];
 int ans = INT_MAX;
 
-auto dfs(int i, int x, int y, int z) -> void {
+auto DFS(int i, int x, int y, int z) -> void {
   if (dp[x][y][z] >= i) return;
 
   int v = max(x, max(y, z));
@@ -44,11 +44,11 @@ auto dfs(int i, int x, int y, int z) -> void {
 
   dp[x][y][z] = i;
 
-  dfs(i + 1, x + ts[i].b, y + ts[i].b, z + ts[i].b);
-  dfs(i + 1, x, y + ts[i].a, z);
-  dfs(i + 1, x + ts[i].a, y, z);
-  dfs(i + 1, x, y + ts[i].c, z + ts[i].c);
-  dfs(i + 1, x + ts[i].c, y, z + ts[i].c);
+  DFS(i + 1, x + ts[i].b, y + ts[i].b, z + ts[i].b);
+  DFS(i + 1, x, y + ts[i].a, z);
+  DFS(i + 1, x + ts[i].a, y, z);
+  DFS(i + 1, x, y + ts[i].c, z + ts[i].c);
+  DFS(i + 1, x + ts[i].c, y, z + ts[i].c);
 }
 
 auto main() -> int {
@@ -59,7 +59,7 @@ auto main() -> int {
   }
 
   dp[0][0][0] = -1;
-  dfs(0, 0, 0, 0);
+  DFS(0, 0, 0, 0);
   cout << ans << endl;
 
   return 0;

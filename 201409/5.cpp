@@ -23,7 +23,7 @@ auto check_empty(int status, int c) -> bool {
 }
 
 int64_t f[lim][lim];
-auto dfs(int ori_status, int cur_status, int nxt_status, int c) -> void {
+auto DFS(int ori_status, int cur_status, int nxt_status, int c) -> void {
   if (cur_status == (1 << m) - 1) {
     f[ori_status][nxt_status]++;
     return;
@@ -32,7 +32,7 @@ auto dfs(int ori_status, int cur_status, int nxt_status, int c) -> void {
     // [][]
     // []
     if (check_empty(cur_status, c + 1) && check_empty(nxt_status, c)) {
-      dfs(ori_status,
+      DFS(ori_status,
           put(cur_status, c, c + 1),
           put(nxt_status, c),
           c + 2);
@@ -40,7 +40,7 @@ auto dfs(int ori_status, int cur_status, int nxt_status, int c) -> void {
     // [][]
     //   []
     if (check_empty(cur_status, c + 1) && check_empty(nxt_status, c + 1)) {
-      dfs(ori_status,
+      DFS(ori_status,
           put(cur_status, c, c + 1),
           put(nxt_status, c + 1),
           c + 2);
@@ -48,7 +48,7 @@ auto dfs(int ori_status, int cur_status, int nxt_status, int c) -> void {
     // []
     // [][]
     if (check_empty(nxt_status, c) && check_empty(nxt_status, c + 1)) {
-      dfs(ori_status,
+      DFS(ori_status,
           put(cur_status, c),
           put(nxt_status, c, c + 1),
           c + 1);
@@ -56,13 +56,13 @@ auto dfs(int ori_status, int cur_status, int nxt_status, int c) -> void {
     //   []
     // [][]
     if (check_empty(nxt_status, c) && check_empty(nxt_status, c - 1)) {
-      dfs(ori_status,
+      DFS(ori_status,
           put(cur_status, c),
           put(nxt_status, c - 1, c),
           c + 1);
     }
   } else {
-    dfs(ori_status, cur_status, nxt_status, c + 1);
+    DFS(ori_status, cur_status, nxt_status, c + 1);
   }
 }
 
@@ -104,7 +104,7 @@ auto main() -> int {
 
   for (int s = 0; s < (1 << m); ++s) {
     ans[s][s] = 1;
-    dfs(s, s, 0, 0);
+    DFS(s, s, 0, 0);
   }
 
   fast_power(f, 1 << m, n);
