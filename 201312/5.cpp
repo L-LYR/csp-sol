@@ -26,7 +26,6 @@ bool reachable = false;
 bool counting = false;
 bool vis[maxn][maxn];
 bool accessible[maxn][maxn];
-bool memo[maxn][maxn];
 int tot = 0, cnt = 0;
 
 int dx[] = {1, -1, 0, 0};
@@ -56,7 +55,7 @@ inline auto forward(int l, int r, int x, int y, queue<point>& q) -> void {
   }
 }
 
-auto bfs(int x, int y) -> void {
+auto BFS(int x, int y) -> void {
   memset(vis, false, sizeof(vis));
 
   queue<point> q;
@@ -107,7 +106,7 @@ auto main() -> int {
       }
     }
   }
-  bfs(s.first, s.second);
+  BFS(s.first, s.second);
   if (!reachable) {
     cout << "I'm stuck!" << endl;
     return 0;
@@ -117,7 +116,7 @@ auto main() -> int {
     for (int j = 0; j < m; ++j) {
       if (accessible[i][j]) {
         tot++;
-        bfs(i, j);
+        BFS(i, j);
       }
     }
   }

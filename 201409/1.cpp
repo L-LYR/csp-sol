@@ -17,7 +17,6 @@ auto main() -> int {
     if (nums[i] - nums[i - 1] == 1) ans++;
   }
   cout << ans << endl;
-
   return 0;
 }
 

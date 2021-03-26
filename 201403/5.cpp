@@ -65,8 +65,6 @@ auto main() -> int {
   return 0;
 }
 
-// csp官网数据有误，仅30分，在下面的网站测试可通过。
-// https://www.acwing.com/problem/content/3204/
 /*
   f(x, y, z) = n 表示CPU0 CPU1 GPU分别使用了x y z时间后，完成了前n个任务，
   所以消耗的时间应该时t(n, f(x, y, z)) = max(x, y, z)。

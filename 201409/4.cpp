@@ -66,7 +66,7 @@ int dy[] = {-1, 1, 0, 0};
 queue<step> q;
 int64_t ans = 0;
 
-auto bfs() -> void {
+auto BFS() -> void {
   step cur;
   int nx, ny;
   while (!q.empty()) {
@@ -105,7 +105,7 @@ auto main() -> int {
     bs.emplace(a, b);
   }
 
-  bfs();
+  BFS();
   cout << ans << endl;
 
   return 0;
