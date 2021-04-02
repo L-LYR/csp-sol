@@ -42,3 +42,7 @@ auto main() -> int {
   cout << ans << endl;
   return 0;
 }
+
+/*
+  n叉树的直径，裸题，两次DFS即可。
+*/

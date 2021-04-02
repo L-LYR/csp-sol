@@ -27,3 +27,5 @@ for y in range(y1, y2 + 1):
         cur += inc
     if cnt < b:
         print("none")
+
+# 投机取巧，Python3的datetime真滴好

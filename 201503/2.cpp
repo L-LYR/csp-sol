@@ -25,3 +25,7 @@ auto main() -> int {
   });
   return 0;
 }
+
+/*
+  排序，没啥好说的，C++11 lambda挺好。
+*/
