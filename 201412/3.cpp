@@ -83,3 +83,7 @@ int main() {
   cout << fixed << setprecision(2) << ansP << " " << ansS << endl;
   return 0;
 }
+
+/*
+  不说了，恶心，排序之后贪心，。
+*/

@@ -19,3 +19,7 @@ auto main(void) -> int {
   }
   return 0;
 }
+
+/*
+  模拟即可。
+*/

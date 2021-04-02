@@ -48,3 +48,7 @@ auto main() -> int {
   cout << ans << endl;
   return 0;
 }
+
+/*
+  最小生成树裸题。
+*/
